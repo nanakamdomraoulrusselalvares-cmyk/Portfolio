@@ -576,7 +576,7 @@ export default function Home() {
                 <div className="absolute inset-0 z-10 bg-[radial-gradient(circle_at_top_left,_rgba(34,211,238,0.16),_transparent_45%),linear-gradient(135deg,rgba(255,255,255,0.08),transparent_65%)] opacity-80" />
                 <div className="absolute inset-0 z-10 bg-[radial-gradient(circle_at_center,_rgba(5,8,22,0.2),_rgba(5,8,22,0.7)_60%,_rgba(5,8,22,0.95)_100%)]" />
                 <Image
-                  src="/motion photo.jpg"
+                  src="/1.png"
                   alt="Nana Kamdom Raoul portrait"
                   fill
                   priority
