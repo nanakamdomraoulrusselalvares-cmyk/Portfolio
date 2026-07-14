@@ -41,7 +41,6 @@ export const metadata: Metadata = {
     },
   },
   authors: [{ name: "Nana Kamdom Raoul", url: "https://nkraoul.vercel.app" }],
-  publisher: { name: "Nana Kamdom Raoul" },
   openGraph: {
     title: "Nana Kamdom Raoul | Software Engineer & Developer",
     description:
