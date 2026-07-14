@@ -394,7 +394,7 @@ export default function Home() {
     "@type": "Person",
     name: "Nana Kamdom Raoul",
     jobTitle: "Software Engineer and Developer",
-    url: "https://nkraoul.com",
+    url: "https://nkraoul.vercel.app",
     sameAs: [
       "https://www.linkedin.com/in/nana-kamdom-raoul",
       "https://github.com/nanakamdomraoulrusselalvares-cmky",
@@ -888,6 +888,45 @@ export default function Home() {
       </motion.button>
     </div>
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }} />
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{
+        __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          name: "Nana Kamdom Raoul",
+          url: "https://nkraoul.com",
+          potentialAction: {
+            "@type": "SearchAction",
+            target: "https://nkraoul.com/?s={search_term_string}",
+            "query-input": "required name=search_term_string",
+          },
+        }),
+      }}
+    />
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{
+        __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            {
+              "@type": "ListItem",
+              position: 1,
+              name: "Home",
+              item: "https://nkraoul.com",
+            },
+            {
+              "@type": "ListItem",
+              position: 2,
+              name: "Portfolio",
+              item: "https://nkraoul.com",
+            },
+          ],
+        }),
+      }}
+    />
     </>
   );
 }

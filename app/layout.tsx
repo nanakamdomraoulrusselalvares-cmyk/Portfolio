@@ -19,38 +19,50 @@ export const metadata: Metadata = {
     template: "%s | Nana Kamdom Raoul",
   },
   description:
-    "Portfolio of Nana Kamdom Raoul, a software engineering student building modern mobile and web experiences with Flutter, Next.js, PHP, and MySQL.",
+    "Nana Kamdom Raoul — software engineering student building mobile & web experiences (Flutter, Next.js, PHP, MySQL). Available for internships, freelance and collaborations.",
   keywords: [
     "Nana Kamdom Raoul",
-    "NKRaoul",
-    "Software Engineer",
-    "Portfolio",
-    "Flutter developer",
-    "Next.js developer",
-    "PHP developer",
-    "Cameroon developer",
+    "software engineer",
+    "mobile developer",
+    "web developer",
+    "Flutter",
+    "Next.js",
+    "TypeScript",
+    "PHP",
+    "MySQL",
+    "portfolio",
+    "Cameroon",
   ],
   alternates: {
     canonical: "https://nkraoul.com",
   },
-  authors: [{ name: "Nana Kamdom Raoul" }],
+  authors: [{ name: "Nana Kamdom Raoul", url: "https://nkraoul.com" }],
+  publisher: { name: "Nana Kamdom Raoul", url: "https://nkraoul.com" },
   openGraph: {
     title: "Nana Kamdom Raoul | Software Engineer & Developer",
     description:
-      "Portfolio of Nana Kamdom Raoul, a software engineering student building modern mobile and web experiences with Flutter, Next.js, PHP, and MySQL.",
+      "Practical mobile & web products built with Flutter, Next.js, PHP and MySQL. Portfolio and contact information for hiring or collaborations.",
     url: "https://nkraoul.com",
     siteName: "Nana Kamdom Raoul",
     type: "website",
+    images: [
+      {
+        url: "https://nkraoul.com/portrait.svg",
+        alt: "Portrait of Nana Kamdom Raoul",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Nana Kamdom Raoul | Software Engineer & Developer",
     description:
-      "Portfolio of Nana Kamdom Raoul, a software engineering student building modern mobile and web experiences with Flutter, Next.js, PHP, and MySQL.",
+      "Portfolio of Nana Kamdom Raoul — mobile & web developer (Flutter, Next.js, PHP).",
+    images: ["/portrait.svg"],
   },
   robots: {
     index: true,
     follow: true,
+    nocache: false,
   },
   icons: {
     icon: "/favicon.svg",
