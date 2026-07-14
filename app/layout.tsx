@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://nkraoul.com"),
+  metadataBase: new URL("https://nkraoul.vercel.app"),
   title: {
     default: "Nana Kamdom Raoul | Software Engineer & Developer",
     template: "%s | Nana Kamdom Raoul",
@@ -34,20 +34,24 @@ export const metadata: Metadata = {
     "Cameroon",
   ],
   alternates: {
-    canonical: "https://nkraoul.com",
+    canonical: "https://nkraoul.vercel.app",
+    languages: {
+      "en-US":"https://nkraoul.vercel.app/en",
+      "fr-FR":"https://nkraoul.vercel.app/fr",
+    },
   },
-  authors: [{ name: "Nana Kamdom Raoul", url: "https://nkraoul.com" }],
-  publisher: { name: "Nana Kamdom Raoul", url: "https://nkraoul.com" },
+  authors: [{ name: "Nana Kamdom Raoul", url: "https://nkraoul.vercel.app" }],
+  publisher: { name: "Nana Kamdom Raoul" },
   openGraph: {
     title: "Nana Kamdom Raoul | Software Engineer & Developer",
     description:
       "Practical mobile & web products built with Flutter, Next.js, PHP and MySQL. Portfolio and contact information for hiring or collaborations.",
-    url: "https://nkraoul.com",
+    url: "https://nkraoul.vercel.app",
     siteName: "Nana Kamdom Raoul",
     type: "website",
     images: [
       {
-        url: "https://nkraoul.com/portrait.svg",
+        url: "https://nkraoul.vercel.app/portrait.svg",
         alt: "Portrait of Nana Kamdom Raoul",
       },
     ],
@@ -57,7 +61,7 @@ export const metadata: Metadata = {
     title: "Nana Kamdom Raoul | Software Engineer & Developer",
     description:
       "Portfolio of Nana Kamdom Raoul — mobile & web developer (Flutter, Next.js, PHP).",
-    images: ["/portrait.svg"],
+    images: ["https://nkraoul.vercel.app/portrait.svg"],
   },
   robots: {
     index: true,
