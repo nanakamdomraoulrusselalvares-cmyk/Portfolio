@@ -438,28 +438,28 @@ export default function Home() {
 
   const ui = isDark
     ? {
-        shell: "bg-[#050816] text-zinc-100",
-        panel: "border-white/10 bg-white/5 backdrop-blur",
-        panelAlt: "border-white/10 bg-slate-950/70",
-        muted: "text-zinc-400",
-        subtle: "text-zinc-300",
-        heading: "text-white",
-        buttonPrimary: "bg-white text-slate-950",
-        buttonSecondary: "border-white/15 bg-white/5 text-zinc-200 hover:border-cyan-400/50 hover:text-cyan-200",
-        footer: "border-white/10 bg-slate-950/40 text-zinc-400",
-        input: "border-white/10 bg-white/5 text-white placeholder:text-zinc-500",
+        shell: "bg-[var(--background)] text-[var(--foreground)]",
+        panel: "border-[var(--border)] bg-[var(--surface)] text-[var(--foreground)] shadow-[0_20px_80px_rgba(15,23,42,0.16)] backdrop-blur",
+        panelAlt: "border-[var(--border)] bg-[var(--surface-soft)] text-[var(--foreground)] shadow-[0_8px_30px_rgba(15,23,42,0.08)]",
+        muted: "text-[var(--muted)]",
+        subtle: "text-[var(--muted)]",
+        heading: "text-[var(--foreground)]",
+        buttonPrimary: "bg-[var(--accent)] text-slate-950 shadow-[0_18px_50px_rgba(34,211,238,0.22)] hover:bg-[var(--accent-alt)]",
+        buttonSecondary: "border-[var(--accent)] bg-[var(--accent-soft)] text-[var(--foreground)] hover:bg-[var(--accent)] hover:text-slate-950",
+        footer: "border-[var(--border)] bg-[var(--surface)] text-[var(--muted)]",
+        input: "border-[var(--border)] bg-[var(--surface-soft)] text-[var(--foreground)] placeholder:text-[var(--muted)]",
       }
     : {
-        shell: "bg-[#f5f7ff] text-slate-900",
-        panel: "border-slate-200/80 bg-white/90 shadow-sm backdrop-blur",
-        panelAlt: "border-slate-200/80 bg-white/95 shadow-sm",
-        muted: "text-slate-600",
-        subtle: "text-slate-700",
-        heading: "text-slate-900",
-        buttonPrimary: "bg-slate-900 text-white",
-        buttonSecondary: "border-slate-300 bg-white text-slate-700 hover:border-cyan-500/50 hover:text-cyan-700",
-        footer: "border-slate-200 bg-white/80 text-slate-600",
-        input: "border-slate-300 bg-white text-slate-900 placeholder:text-slate-400",
+        shell: "bg-[var(--background)] text-[var(--foreground)]",
+        panel: "border-[var(--border)] ring-1 ring-[var(--accent-soft)] bg-[var(--surface)] text-[var(--foreground)] shadow-[0_16px_45px_rgba(56,189,248,0.08)] backdrop-blur",
+        panelAlt: "border-[var(--border)] ring-1 ring-[var(--accent-alt-soft)] bg-[var(--surface-soft)] text-[var(--foreground)] shadow-[0_10px_30px_rgba(139,92,246,0.1)]",
+        muted: "text-[var(--muted)]",
+        subtle: "text-[var(--muted)]",
+        heading: "text-[var(--foreground)]",
+        buttonPrimary: "inline-flex items-center justify-center rounded-full bg-gradient-to-r from-[var(--accent)] to-[var(--accent-alt)] text-slate-950 shadow-[0_18px_50px_rgba(34,211,238,0.22)] transition hover:brightness-105",
+        buttonSecondary: "border-[var(--accent-alt)] bg-[var(--accent-alt-soft)] text-[var(--foreground)] hover:bg-[var(--accent-alt)] hover:text-slate-950",
+        footer: "border-[var(--border)] bg-[var(--surface)] text-[var(--muted)]",
+        input: "border-[var(--border)] bg-[var(--surface-soft)] text-[var(--foreground)] placeholder:text-[var(--muted)]",
       };
 
   const scrollToTop = () => {
@@ -469,10 +469,10 @@ export default function Home() {
   return (
     <>
     <div className={`relative min-h-screen overflow-x-hidden transition-colors duration-300 ${ui.shell}`}>
-      <div className={`pointer-events-none absolute inset-0 -z-10 ${isDark ? "bg-[radial-gradient(circle_at_top_left,_rgba(124,58,237,0.26),_transparent_34%),radial-gradient(circle_at_90%_10%,_rgba(6,182,212,0.24),_transparent_30%)]" : "bg-[radial-gradient(circle_at_top_left,_rgba(59,130,246,0.15),_transparent_34%),radial-gradient(circle_at_90%_10%,_rgba(16,185,129,0.16),_transparent_30%)]"}`} />
+      <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top_left,_rgba(34,211,238,0.18),_transparent_34%),radial-gradient(circle_at_90%_10%,_rgba(168,85,247,0.12),_transparent_30%)]" />
 
       <header className="mx-auto flex w-full max-w-7xl flex-wrap items-center justify-between gap-4 px-6 py-6 sm:px-8 lg:px-12">
-        <a href="#hero" className={`text-lg font-semibold uppercase tracking-[0.3em] ${isDark ? "text-zinc-200" : "text-slate-800"}`}>
+        <a href="#hero" className="text-lg font-semibold uppercase tracking-[0.3em] text-[var(--foreground)]">
           NANA KAMDOM RAOUL
         </a>
         <div className="flex flex-wrap items-center gap-3">
@@ -480,14 +480,14 @@ export default function Home() {
             <button
               type="button"
               onClick={() => setLanguage("en")}
-              className={`rounded-full px-3 py-1 text-sm font-medium ${language === "en" ? (isDark ? "bg-white text-slate-900" : "bg-slate-900 text-white") : "text-zinc-500"}`}
+              className={`rounded-full px-3 py-1 text-sm font-medium transition ${language === "en" ? "bg-[var(--accent)] text-slate-950" : "text-[var(--muted)] hover:text-[var(--accent)]"}`}
             >
               EN
             </button>
             <button
               type="button"
               onClick={() => setLanguage("fr")}
-              className={`rounded-full px-3 py-1 text-sm font-medium ${language === "fr" ? (isDark ? "bg-white text-slate-900" : "bg-slate-900 text-white") : "text-zinc-500"}`}
+              className={`rounded-full px-3 py-1 text-sm font-medium transition ${language === "fr" ? "bg-[var(--accent)] text-slate-950" : "text-[var(--muted)] hover:text-[var(--accent)]"}`}
             >
               FR
             </button>
@@ -502,16 +502,16 @@ export default function Home() {
           </button>
         </div>
         <nav className={`hidden items-center gap-6 text-sm md:flex ${ui.muted}`}>
-          <a href="#projects" className={`transition ${isDark ? "hover:text-white" : "hover:text-slate-900"}`}>
+          <a href="#projects" className="transition hover:text-[var(--accent)]">
             {content.nav.projects}
           </a>
-          <a href="#experience" className={`transition ${isDark ? "hover:text-white" : "hover:text-slate-900"}`}>
+          <a href="#experience" className="transition hover:text-[var(--accent)]">
             {content.nav.experience}
           </a>
-          <a href="#education" className={`transition ${isDark ? "hover:text-white" : "hover:text-slate-900"}`}>
+          <a href="#education" className="transition hover:text-[var(--accent)]">
             {content.nav.education}
           </a>
-          <a href="#contact" className={`transition ${isDark ? "hover:text-white" : "hover:text-slate-900"}`}>
+          <a href="#contact" className="transition hover:text-[var(--accent)]">
             {content.nav.contact}
           </a>
         </nav>
@@ -580,18 +580,18 @@ export default function Home() {
                   alt="Nana Kamdom Raoul portrait"
                   fill
                   priority
-                  className="object-cover object-center transition duration-700 group-hover:scale-105"
+                  className="object-cover object-center transition duration-700 group-hover:scale-105 animate-float"
                 />
                 <div className="absolute inset-x-0 bottom-0 z-20 h-24 bg-gradient-to-t from-slate-950/80 to-transparent" />
               </div>
               <div className="mt-4 grid gap-3 sm:grid-cols-2">
-                <div className="rounded-2xl border border-cyan-400/20 bg-cyan-400/10 p-3 text-sm text-cyan-100">
-                  <p className="font-semibold">{content.hero.cardA.title}</p>
-                  <p className="mt-1 text-cyan-200/80">{content.hero.cardA.body}</p>
+                <div className="rounded-2xl border border-[var(--accent-soft)] bg-[var(--accent-soft)] p-3 text-sm text-[var(--foreground)]">
+                  <p className="font-semibold text-[var(--foreground)]">{content.hero.cardA.title}</p>
+                  <p className="mt-1 text-[var(--accent)]">{content.hero.cardA.body}</p>
                 </div>
-                <div className="rounded-2xl border border-fuchsia-400/20 bg-fuchsia-400/10 p-3 text-sm text-fuchsia-100">
-                  <p className="font-semibold">{content.hero.cardB.title}</p>
-                  <p className="mt-1 text-fuchsia-200/80">{content.hero.cardB.body}</p>
+                <div className="rounded-2xl border border-[var(--accent-alt-soft)] bg-[var(--accent-alt-soft)] p-3 text-sm text-[var(--foreground)]">
+                  <p className="font-semibold text-[var(--foreground)]">{content.hero.cardB.title}</p>
+                  <p className="mt-1 text-[var(--accent-alt)]">{content.hero.cardB.body}</p>
                 </div>
               </div>
             </div>
@@ -624,7 +624,7 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.2 }}
                 transition={{ duration: 0.5, delay: index * 0.08 }}
-                className={`group rounded-[1.75rem] border p-6 backdrop-blur transition hover:-translate-y-1 ${ui.panel} ${isDark ? "hover:border-cyan-400/40" : "hover:border-cyan-500/40"}`}
+                className={`group rounded-[1.75rem] border p-6 backdrop-blur transition hover:-translate-y-1 ${ui.panel} hover:border-[var(--accent)]`}
               >
                 <div className={`mb-6 flex items-center justify-between text-sm ${ui.muted}`}>
                   <span>{project.type}</span>
@@ -694,7 +694,7 @@ export default function Home() {
               <div key={item.title} className={`rounded-[1.5rem] border p-5 ${ui.panelAlt}`}>
                 <div className="flex items-center justify-between gap-3">
                   <h3 className={`text-lg font-semibold ${ui.heading}`}>{item.title}</h3>
-                  <span className={`rounded-full border px-3 py-1 text-xs ${isDark ? "border-cyan-400/20 bg-cyan-400/10 text-cyan-100" : "border-cyan-500/20 bg-cyan-500/10 text-cyan-700"}`}>
+                  <span className="rounded-full border border-[var(--accent-soft)] bg-[var(--accent-soft)] px-3 py-1 text-xs text-[var(--foreground)]">
                     {item.duration}
                   </span>
                 </div>
@@ -737,7 +737,7 @@ export default function Home() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.6 }}
-          className={`rounded-[2rem] border p-8 sm:p-10 ${isDark ? "border-cyan-400/20 bg-gradient-to-br from-cyan-500/10 to-fuchsia-500/10" : "border-cyan-500/20 bg-gradient-to-br from-cyan-500/10 to-fuchsia-500/10"}`}
+          className="rounded-[2rem] border border-[var(--border)] bg-gradient-to-br from-[var(--accent-soft)] via-transparent to-[var(--accent-alt-soft)] p-8 sm:p-10"
         >
           <div className="mb-8">
             <p className={`text-sm uppercase tracking-[0.3em] ${ui.muted}`}>{content.sections.certifications.eyebrow}</p>
@@ -760,15 +760,15 @@ export default function Home() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.6 }}
-          className={`rounded-[2rem] border p-8 sm:p-10 ${isDark ? "border-cyan-400/20 bg-cyan-400/10" : "border-cyan-500/20 bg-cyan-500/10"}`}
+          className="rounded-[2rem] border border-[var(--border)] bg-[var(--accent-soft)] p-8 sm:p-10"
         >
           <div className="grid gap-8 lg:grid-cols-[0.95fr_1.05fr]">
             <div>
-              <p className={`text-sm uppercase tracking-[0.3em] ${isDark ? "text-cyan-100/80" : "text-cyan-700"}`}>{content.sections.contact.eyebrow}</p>
+              <p className="text-sm uppercase tracking-[0.3em] text-[var(--accent)]">{content.sections.contact.eyebrow}</p>
               <h2 className={`mt-3 text-3xl font-semibold sm:text-4xl ${ui.heading}`}>
                 {content.sections.contact.heading}
               </h2>
-              <p className={`mt-4 max-w-2xl ${isDark ? "text-zinc-300" : "text-slate-700"}`}>
+              <p className="mt-4 max-w-2xl text-[var(--muted)]">
                 {content.sections.contact.body}
               </p>
               <div className="mt-6 space-y-3">
@@ -781,13 +781,13 @@ export default function Home() {
                 <p className={`text-sm ${ui.heading}`}>{content.contact.location}: Ngousso</p>
               </div>
               <div className="mt-6 flex flex-wrap gap-3">
-                <a href="https://github.com" target="_blank" rel="noreferrer" className={`text-sm underline-offset-4 hover:underline ${isDark ? "text-cyan-100" : "text-cyan-700"}`}>
+                <a href="https://github.com" target="_blank" rel="noreferrer" className="text-sm underline-offset-4 hover:underline text-[var(--foreground)] hover:text-[var(--accent)]">
                   {content.contact.github}
                 </a>
-                <a href="https://www.linkedin.com" target="_blank" rel="noreferrer" className={`text-sm underline-offset-4 hover:underline ${isDark ? "text-cyan-100" : "text-cyan-700"}`}>
+                <a href="https://www.linkedin.com" target="_blank" rel="noreferrer" className="text-sm underline-offset-4 hover:underline text-[var(--foreground)] hover:text-[var(--accent)]">
                   {content.contact.linkedin}
                 </a>
-                <a href="https://www.instagram.com" target="_blank" rel="noreferrer" className={`text-sm underline-offset-4 hover:underline ${isDark ? "text-cyan-100" : "text-cyan-700"}`}>
+                <a href="https://www.instagram.com" target="_blank" rel="noreferrer" className="text-sm underline-offset-4 hover:underline text-[var(--foreground)] hover:text-[var(--accent)]">
                   {content.contact.instagram}
                 </a>
               </div>
@@ -819,7 +819,7 @@ export default function Home() {
                 className={`mt-4 w-full rounded-2xl border px-4 py-3 text-sm outline-none ${ui.input}`}
                 required
               />
-              {formStatus ? <p className={`mt-3 text-sm ${isDark ? "text-cyan-100" : "text-cyan-700"}`}>{formStatus}</p> : null}
+              {formStatus ? <p className="mt-3 text-sm text-[var(--accent)]">{formStatus}</p> : null}
               <button
                 type="submit"
                 className={`mt-4 inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-semibold transition hover:scale-[1.01] ${ui.buttonPrimary}`}
@@ -838,13 +838,13 @@ export default function Home() {
             <p className="mt-1">{content.footer.subtitle}</p>
           </div>
           <div className="flex flex-wrap items-center gap-4">
-            <a href="#hero" className={`transition ${isDark ? "hover:text-white" : "hover:text-slate-900"}`}>
+            <a href="#hero" className="transition hover:text-[var(--accent)]">
               {content.footer.backToTop}
             </a>
-            <a href="mailto:nanakamdomraoulrusselalvares@gmail.com" className={`transition ${isDark ? "hover:text-white" : "hover:text-slate-900"}`}>
+            <a href="mailto:nanakamdomraoulrusselalvares@gmail.com" className="transition hover:text-[var(--accent)]">
               {content.footer.email}
             </a>
-            <a href="#contact" className={`transition ${isDark ? "hover:text-white" : "hover:text-slate-900"}`}>
+            <a href="#contact" className="transition hover:text-[var(--accent)]">
               {content.footer.contact}
             </a>
           </div>
@@ -861,14 +861,14 @@ export default function Home() {
               whileTap={{ scale: 0.96 }}
               transition={{ type: "spring", stiffness: 280, damping: 18 }}
               aria-label={item.name}
-              className={`flex h-12 w-12 items-center justify-center rounded-full border border-white/10 shadow-lg backdrop-blur transition hover:-translate-y-1 hover:scale-105 ${item.bgClass}`}
+              className={`flex h-12 w-12 items-center justify-center rounded-full border border-[var(--border)] shadow-lg backdrop-blur transition hover:-translate-y-1 hover:scale-105 ${item.bgClass}`}
             >
               {item.icon}
             </motion.a>
           ))}
         </div>
 
-        <div className={`mx-auto mt-5 max-w-7xl border-t pt-4 text-center text-xs uppercase tracking-[0.25em] md:text-left ${isDark ? "border-white/10 text-zinc-500" : "border-slate-200 text-slate-500"}`}>
+        <div className="mx-auto mt-5 max-w-7xl border-t border-[var(--border)] pt-4 text-center text-xs uppercase tracking-[0.25em] md:text-left text-[var(--muted)]">
           {content.footer.rights}
         </div>
       </footer>
@@ -880,7 +880,7 @@ export default function Home() {
         initial={{ opacity: 0, y: 24, scale: 0.95 }}
         animate={{ opacity: showScrollTop ? 1 : 0, y: showScrollTop ? 0 : 24, scale: showScrollTop ? 1 : 0.95 }}
         transition={{ duration: 0.25, ease: "easeOut" }}
-        className={`fixed bottom-6 right-6 z-50 flex h-12 w-12 items-center justify-center rounded-full border shadow-[0_0_30px_rgba(34,211,238,0.25)] backdrop-blur ${isDark ? "border-cyan-400/30 bg-slate-950/80 text-cyan-200 hover:border-cyan-300 hover:text-white" : "border-cyan-500/30 bg-white/90 text-cyan-700 hover:border-cyan-400 hover:text-cyan-600"}`}
+        className="fixed bottom-6 right-6 z-50 flex h-12 w-12 items-center justify-center rounded-full border border-[var(--border)] bg-[var(--surface-soft)] text-[var(--accent)] shadow-[0_0_30px_rgba(34,211,238,0.22)] backdrop-blur transition hover:border-[var(--accent)] hover:text-slate-950"
       >
         <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <path d="m18 15-6-6-6 6" />

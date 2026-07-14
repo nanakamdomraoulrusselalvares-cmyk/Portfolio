@@ -2,17 +2,41 @@
 
 :root {
   --background: #050816;
-  --foreground: #f5f7ff;
+  --surface: rgba(15, 23, 42, 0.88);
+  --surface-soft: rgba(15, 23, 42, 0.72);
+  --foreground: #f8fbff;
+  --muted: #94a3b8;
+  --accent: #22d3ee;
+  --accent-soft: rgba(34, 211, 238, 0.14);
+  --accent-alt: #a855f7;
+  --accent-alt-soft: rgba(168, 85, 247, 0.12);
+  --border: rgba(148, 163, 184, 0.18);
 }
 
 html.dark-theme {
   --background: #050816;
-  --foreground: #f5f7ff;
+  --surface: rgba(15, 23, 42, 0.88);
+  --surface-soft: rgba(15, 23, 42, 0.72);
+  --foreground: #f8fbff;
+  --muted: #94a3b8;
+  --accent: #22d3ee;
+  --accent-soft: rgba(34, 211, 238, 0.14);
+  --accent-alt: #a855f7;
+  --accent-alt-soft: rgba(168, 85, 247, 0.12);
+  --border: rgba(148, 163, 184, 0.18);
 }
 
 html.light-theme {
-  --background: #f5f7ff;
+  --background: #eff6ff;
+  --surface: rgba(255, 255, 255, 0.95);
+  --surface-soft: rgba(241, 245, 249, 0.95);
   --foreground: #0f172a;
+  --muted: #475569;
+  --accent: #0ea5e9;
+  --accent-soft: rgba(14, 165, 233, 0.14);
+  --accent-alt: #8b5cf6;
+  --accent-alt-soft: rgba(139, 92, 246, 0.12);
+  --border: rgba(148, 163, 184, 0.18);
 }
 
 @theme inline {
@@ -30,12 +54,49 @@ html {
 
 body {
   min-height: 100vh;
-  background: var(--background);
+  background-color: var(--background);
+  background-image: radial-gradient(circle at top left, rgba(34, 211, 238, 0.18), transparent 28%), radial-gradient(circle at 88% 15%, rgba(168, 85, 247, 0.14), transparent 24%);
   color: var(--foreground);
   font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
 }
 
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-14px);
+  }
+}
+
+.animate-float {
+  animation: float 8s ease-in-out infinite;
+}
+
 ::selection {
-  background: rgba(34, 211, 238, 0.4);
+  background: rgba(56, 189, 248, 0.35);
   color: white;
+}
+
+.accent-text {
+  color: var(--accent);
+}
+
+.accent-bg {
+  background: linear-gradient(135deg, rgba(34, 211, 238, 0.18), rgba(168, 85, 247, 0.18));
+}
+
+.section-hero-badge {
+  border-color: rgba(34, 211, 238, 0.28);
+  background-color: rgba(14, 165, 233, 0.14);
+  color: #e0f2fe;
+}
+
+.card-glow {
+  border-color: rgba(56, 189, 248, 0.2);
+  background-color: rgba(15, 23, 42, 0.65);
+}
+
+.light-theme body {
+  background-image: radial-gradient(circle at top left, rgba(14, 165, 233, 0.12), transparent 28%), radial-gradient(circle at 88% 15%, rgba(139, 92, 246, 0.12), transparent 24%);
 }
