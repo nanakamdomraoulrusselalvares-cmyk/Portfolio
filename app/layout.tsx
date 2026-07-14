@@ -85,11 +85,7 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
     <head>
-        {/* Collez votre balise de vérification Google ici */}
-        <meta 
-          name="google-site-verification" 
-          content="google-site-verification=ELpSLuxQj8F5jCDGz0lhXMuj9Xg4JVrwXldXTd3X824" 
-        />
+        <meta name="google-site-verification" content="Rr8CVvIDA6buvWIK-yj_IMNR330KFbQ7CQehFeTI8Jo" />
       </head>
       <body className="min-h-full flex flex-col">{children}</body>
     </html>
